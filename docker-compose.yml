@@ -1,0 +1,19 @@
+version: '3'
+services:
+  ABD:
+    # Nombre del servicio individual, que se usará como prefijo en nombres de contenedores
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: imagenabd # Nombre de la imagen
+    container_name: ABD # Nombre del contenedor individual
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./Ejercicios:/Ejercicios
+
+volumes:
+  postgres-data:
+
+    # Jesús Gómez - jesus.gomeztocino@alum.uca.es
